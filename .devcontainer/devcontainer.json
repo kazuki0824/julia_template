@@ -1,0 +1,27 @@
+{
+	"name": "TVOutputProcessor",
+	
+	"context": "..",
+	"dockerFile": "Dockerfile",
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"workbench.editor.enablePreview":false,
+		"julia.usePlotPane": true,
+		"julia.liveTestFile": "test/runtests.jl"
+	},
+	"extensions": [
+		"julialang.language-julia",
+		"shd101wyy.markdown-preview-enhanced",
+		"mhutchie.git-graph",
+		"eamodio.gitlens"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "julia PkgTemplateSetup.jl",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+}
